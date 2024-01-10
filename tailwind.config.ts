@@ -18,7 +18,7 @@ const config: Config = {
     },
   },
   darkMode: "class",
-  plugins: [
+  plugins: [require("daisyui"),
     nextui({
       prefix: "nextui",
       addCommonColors: false,
