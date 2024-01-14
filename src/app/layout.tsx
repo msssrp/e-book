@@ -5,7 +5,6 @@ import { Providers } from "@/components/NextUiProvider";
 const inter = Inter({ subsets: ["latin"] });
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Carousel from "@/components/Carousel";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,7 +21,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           <Navbar />
-          <Carousel />
           {children}
           <Footer />
         </Providers>
