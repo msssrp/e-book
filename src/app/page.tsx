@@ -1,5 +1,7 @@
 import Carousel from "@/components/main/Carousel";
 import Search from "./(component)/Search";
+import Tabs from "@/components/main/Tabs";
+
 export default function Home() {
   return (
     <div>
@@ -15,8 +17,12 @@ export default function Home() {
             <div className="p-4 border text-center">5</div>
           </div>
 
-          <div className="border-2 sm:col-span-2 md:col-span-3 flex flex-col items-center justify-center overflow-y-auto">
-            <div className="h-[500px]">hey</div>
+          <div className="sm:col-span-2 md:col-span-3 flex flex-col items-center justify-center overflow-y-auto">
+            <div className="w-full">
+              <div>
+                <Tabs/>
+              </div>
+            </div>
             <div className="h-[500px]">hey</div>
             <div className="h-[500px]">hey</div>
             <div className="h-[500px]">hey</div>
