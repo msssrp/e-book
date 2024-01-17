@@ -1,8 +1,13 @@
 "use client";
 import React from "react";
 import { Tabs as NextUITabs, Tab, Card, CardBody } from "@nextui-org/react";
-
-const CustomTabs = () => {
+import Cards from "./Cards";
+import { TabsProps } from "@/type";
+const CustomTabs: React.FC<TabsProps> = ({
+  bookMain,
+  bookRecommend,
+  bookNew,
+}) => {
   const [selected, setSelected] = React.useState("");
   return (
     <div className="w-full flex flex-col ">
@@ -11,7 +16,7 @@ const CustomTabs = () => {
         color="primary"
         aria-label="Options"
         selectedKey={selected}
-        onSelectionChange={setSelected}
+        onSelectionChange={(key: any) => setSelected(key)}
         className=""
         classNames={{
           tabList:
@@ -21,71 +26,21 @@ const CustomTabs = () => {
           tabContent:
             "group-data-[selected=true]:text-[#952124] px-2 px-2 sm:px-4",
           panel: "grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3",
-        }}
-      >
+        }}>
         <Tab key="book_list" title="รายการหนังสือ">
-          <Card>
-          <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </CardBody>
-          </Card>
-          <Card>
-            <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </CardBody>
-          </Card>
-          <Card>
-            <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </CardBody>
-          </Card>
-          <Card>
-            <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </CardBody>
-          </Card>
-          <Card>
-            <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </CardBody>
-          </Card>
-          <Card>
-            <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </CardBody>
-          </Card>
+          {bookMain.map((book, index) => (
+            <Cards book={book} key={index} />
+          ))}
         </Tab>
         <Tab key="book_recom" title="หนังสือแนะนำ">
-          <p>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
-          </p>
+          {bookRecommend.map((book, index) => (
+            <Cards book={book} key={index} />
+          ))}
         </Tab>
         <Tab key="book_new" title="หนังสือใหม่">
-          <p>
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum.
-          </p>
+          {bookNew.map((book, index) => (
+            <Cards book={book} key={index} />
+          ))}
         </Tab>
       </NextUITabs>
     </div>

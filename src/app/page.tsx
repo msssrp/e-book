@@ -3,6 +3,50 @@ import Search from "./(component)/Search";
 import Tabs from "@/components/main/Tabs";
 
 export default function Home() {
+  const bookCover = [
+    {
+      bookID: "1",
+      bookCover:
+        "https://d2qp0siotla746.cloudfront.net/img/use-cases/ebook/template_0.jpg",
+      bookBehind: "a",
+    },
+    {
+      bookID: "2",
+      bookCover:
+        "https://marketplace.canva.com/EAFbWl4xunQ/2/0/1024w/canva-neutral-minimalist-aesthetic-finance-basics-for-women-guide-ebook-cover-NLo1dMhwsSw.jpg",
+      bookBehind: "a",
+    },
+  ];
+  const bookCover2 = [
+    {
+      bookID: "3",
+      bookCover:
+        "https://d2qp0siotla746.cloudfront.net/img/use-cases/ebook/template_0.jpg",
+      bookBehind: "a",
+    },
+    {
+      bookID: "4",
+      bookCover:
+        "https://marketplace.canva.com/EAFbWl4xunQ/2/0/1024w/canva-neutral-minimalist-aesthetic-finance-basics-for-women-guide-ebook-cover-NLo1dMhwsSw.jpg",
+      bookBehind: "a",
+    },
+  ];
+
+  const bookCover3 = [
+    {
+      bookID: "5",
+      bookCover:
+        "https://d2qp0siotla746.cloudfront.net/img/use-cases/ebook/template_0.jpg",
+      bookBehind: "a",
+    },
+    {
+      bookID: "6",
+      bookCover:
+        "https://marketplace.canva.com/EAFbWl4xunQ/2/0/1024w/canva-neutral-minimalist-aesthetic-finance-basics-for-women-guide-ebook-cover-NLo1dMhwsSw.jpg",
+      bookBehind: "a",
+    },
+  ];
+
   return (
     <div>
       <Carousel />
@@ -20,12 +64,13 @@ export default function Home() {
           <div className="sm:col-span-2 md:col-span-3 flex flex-col items-center justify-center overflow-y-auto">
             <div className="w-full">
               <div>
-                <Tabs/>
+                <Tabs
+                  bookMain={bookCover}
+                  bookRecommend={bookCover2}
+                  bookNew={bookCover3}
+                />
               </div>
             </div>
-            <div className="h-[500px]">hey</div>
-            <div className="h-[500px]">hey</div>
-            <div className="h-[500px]">hey</div>
           </div>
         </div>
       </div>
