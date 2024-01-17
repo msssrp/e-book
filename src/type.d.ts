@@ -27,3 +27,6 @@ export type TabsProps = {
     bookBehind: string;
   }[];
 };
+export type createProps = {
+  userId: string;
+};

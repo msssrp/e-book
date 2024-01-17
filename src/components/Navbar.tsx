@@ -26,6 +26,11 @@ const Navbar = async () => {
           {session ? (
             <>
               {session.user.email}
+              <Link
+                className="p-2 mr-2 ml-2 text-white border rounded-lg"
+                href={"/books/create"}>
+                create
+              </Link>
               <SignOutButton />
             </>
           ) : (
