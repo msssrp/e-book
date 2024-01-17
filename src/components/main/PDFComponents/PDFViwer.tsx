@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
+import { PDFUrl } from "@/type";
 import { Document, Page, pdfjs } from "react-pdf";
-import { PDFUrl } from "../../../type";
 const PDFViwer: React.FC<PDFUrl> = ({ url }) => {
   const pdfUrl = "https://corsproxy.io/?" + encodeURIComponent(url);
   pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
